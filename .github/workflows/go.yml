@@ -18,7 +18,8 @@ jobs:
 
     - name: Get dependencies
       run: |
-        mkdir -p /opt/go
+        mkdir -p /opt/go/bin
+        mkdir -p /opt/go/src
         export GOPATH=/opt/go
         echo "hello, github action" > /opt/go/hello.txt
         
