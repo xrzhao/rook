@@ -29,13 +29,16 @@ jobs:
 
         echo "begin dep ensure..........."
         cd rook
-        /home/runner/go/bin/dep ensure -v
+        #/home/runner/go/bin/dep ensure -v
         echo "done dep ensure"
 
     - name: Build
       run: |
-        tar czvf gopath.tar.gz $GOPATH/
-        git add ./gopath.tar.gz
-        git commit -m 'gopath.tar.gz'
-        git push
+        echo "pwd: "$PWD
+        echo "gopath: "$GOPATH
+        ls -l $GOPATH/
+        #tar czvf gopath.tar.gz $GOPATH/
+        #git add ./gopath.tar.gz
+        #git commit -m 'gopath.tar.gz'
+        #git push
         #go build -v ./...
