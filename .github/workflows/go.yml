@@ -19,7 +19,7 @@ jobs:
     - name: Get dependencies
       run: |
         #curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh 
-        go get golang.github.io/dep/
+        go get github.com/golang/dep
         dep ensure
         #go get -v -t -d ./...
         #if [ -f Gopkg.toml ]; then
