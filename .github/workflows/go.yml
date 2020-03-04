@@ -21,9 +21,8 @@ jobs:
         mkdir -p /opt/go/bin
         mkdir -p /opt/go/src
         export GOPATH=/opt/go
-        echo "hello, github action" > /opt/go/hello.txt
+        export PATH=$GOPATH/bin:$PATH
         
-        mkdir -p /home/runner/go/bin
         curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
         
         mkdir -p /home/runner/go/src/github.com/rook
@@ -34,7 +33,7 @@ jobs:
 
         echo "begin dep ensure..........."
         cd rook
-        /home/runner/go/bin/dep ensure -v
+        dep ensure -v
         echo "done dep ensure"
 
     - name: Build
