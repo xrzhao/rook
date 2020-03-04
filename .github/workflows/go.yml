@@ -40,10 +40,12 @@ jobs:
     - name: Build
       run: |
         echo "pwd: "$PWD
+        export GOPATH=/opt/go
         echo "gopath: "$GOPATH
-        ls -l $GOPATH/
         tar czvf go.tar.gz /opt/go
         git add ./go.tar.gz
+        git config --global user.email "zhaoxr@lenovocloud.com"
+        git config --global user.name "xiaorui zhao"
         git commit -m 'go.tar.gz'
         git push
         #go build -v ./...
