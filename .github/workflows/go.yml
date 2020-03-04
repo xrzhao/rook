@@ -18,7 +18,10 @@ jobs:
 
     - name: Get dependencies
       run: |
-        go get github.com/rook/rook
+        mkdir -p /home/runner/go/src/github.com/rook
+        cd /home/runner/go/src/github.com/rook
+        git clone github.com/rook/rook.git
+        
         #curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh 
         #go get github.com/golang/dep
         #dep ensure
