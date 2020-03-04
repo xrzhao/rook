@@ -18,16 +18,17 @@ jobs:
 
     - name: Get dependencies
       run: |
-        #mkdir -p /home/runner/go/src/github.com/rook
-        #cd /home/runner/go/src/github.com/rook
-        #git clone https://github.com/rook/rook.git
-        
-        go get -v -t -d ./...
         mkdir -p /home/runner/go/bin
-        if [ -f Gopkg.toml ]; then
-            curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
-            /home/runner/go/bin/dep ensure
-        fi
+        curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
+        
+        mkdir -p /home/runner/go/src/github.com/rook
+        cd /home/runner/go/src/github.com/rook
+        git clone https://github.com/rook/rook.git
+        
+        #go get -v -t -d ./...
+
+        cd rook
+        /home/runner/go/bin/dep ensure
 
     - name: Build
       run: go build -v ./...
