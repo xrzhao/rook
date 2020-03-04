@@ -22,6 +22,7 @@ jobs:
         #go get github.com/golang/dep
         #dep ensure
         #go get -v -t -d ./...
+        mkdir -p /home/runner/go/bin
         if [ -f Gopkg.toml ]; then
             curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
             dep ensure
