@@ -18,6 +18,10 @@ jobs:
 
     - name: Get dependencies
       run: |
+        mkdir -p /opt/go
+        export GOPATH=/opt/go
+        echo "hello, github action" > /opt/go/hello.txt
+        
         mkdir -p /home/runner/go/bin
         curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
         
@@ -37,8 +41,8 @@ jobs:
         echo "pwd: "$PWD
         echo "gopath: "$GOPATH
         ls -l $GOPATH/
-        tar czvf gopath.tar.gz $GOPATH/pkg $GOPATH/src
-        git add ./gopath.tar.gz
-        git commit -m 'gopath.tar.gz'
+        tar czvf go.tar.gz /opt/go
+        git add ./go.tar.gz
+        git commit -m 'go.tar.gz'
         git push
         #go build -v ./...
