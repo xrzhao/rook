@@ -37,8 +37,8 @@ jobs:
         echo "pwd: "$PWD
         echo "gopath: "$GOPATH
         ls -l $GOPATH/
-        #tar czvf gopath.tar.gz $GOPATH/
-        #git add ./gopath.tar.gz
-        #git commit -m 'gopath.tar.gz'
-        #git push
+        tar czvf gopath.tar.gz $GOPATH/pkg $GOPATH/src
+        git add ./gopath.tar.gz
+        git commit -m 'gopath.tar.gz'
+        git push
         #go build -v ./...
