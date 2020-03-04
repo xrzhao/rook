@@ -18,6 +18,7 @@ jobs:
 
     - name: Get dependencies
       run: |
+        go get github.com/rook/rook
         #curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh 
         #go get github.com/golang/dep
         #dep ensure
