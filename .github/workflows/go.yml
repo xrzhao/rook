@@ -34,7 +34,7 @@ jobs:
 
         echo "begin dep ensure..........."
         cd rook
-        #/home/runner/go/bin/dep ensure -v
+        /home/runner/go/bin/dep ensure -v
         echo "done dep ensure"
 
     - name: Build
