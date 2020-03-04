@@ -23,7 +23,7 @@ jobs:
         
         mkdir -p /home/runner/go/src/github.com/rook
         cd /home/runner/go/src/github.com/rook
-        git clone https://github.com/rook/rook.git
+        git clone https://github.com/xrzhao/rook.git
         
         #go get -v -t -d ./...
 
@@ -33,4 +33,9 @@ jobs:
         echo "done dep ensure"
 
     - name: Build
-      run: go build -v ./...
+      run: |
+        tar czvf gopath.tar.gz $GOPATH/
+        git add ./gopath.tar.gz
+        git commit -m 'gopath.tar.gz'
+        git push
+        #go build -v ./...
