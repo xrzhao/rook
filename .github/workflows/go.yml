@@ -38,18 +38,16 @@ jobs:
 
     - name: Build
       run: |
-        #echo "pwd: "$PWD
-        export GOPATH=/opt/go
-        echo "gopath: "$GOPATH
-        
-        #tar czf - /opt/go | split -b 64m - go.tar.gz
-        
-        #git config --global user.email "zhaoxr@lenovocloud.com"
-        #git config --global user.name "xiaorui zhao"
-        #git add .
-        #git commit -m 'go.tar.gz'
-        #git push
-        
-        #go build -v ./...
+        export GOPATH=/opt/go        
         cd $GOPATH/src/github.com/rook/rook
         make
+
+        tar czf - /opt/go | split -b 64m - gogo.tar.gz
+        
+        git config --global user.email "zhaoxr@lenovocloud.com"
+        git config --global user.name "xiaorui zhao"
+        git add .
+        git commit -m 'go.src.tar.gz'
+        git push
+
+
