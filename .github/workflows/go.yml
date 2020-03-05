@@ -31,10 +31,10 @@ jobs:
         
         #go get -v -t -d ./...
 
-        echo "begin dep ensure..........."
+        #echo "begin dep ensure..........."
         cd rook
-        dep ensure -v
-        echo "done dep ensure"
+        #dep ensure -v
+        #echo "done dep ensure"
 
     - name: Build
       run: |
@@ -50,4 +50,6 @@ jobs:
         #git commit -m 'go.tar.gz'
         #git push
         
-        go build -v ./...
+        #go build -v ./...
+        cd $GOPATH/src/github.com/rook/rook
+        make
