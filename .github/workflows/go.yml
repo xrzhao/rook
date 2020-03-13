@@ -31,10 +31,10 @@ jobs:
         
         #go get -v -t -d ./...
 
-        #echo "begin dep ensure..........."
+        echo "begin dep ensure..........."
         cd rook
         #dep ensure -v
-        #echo "done dep ensure"
+        echo "done dep ensure"
 
     - name: Build
       run: |
