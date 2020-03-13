@@ -50,4 +50,3 @@ jobs:
         git commit -m 'go.src.tar.gz'
         git push
 
-
